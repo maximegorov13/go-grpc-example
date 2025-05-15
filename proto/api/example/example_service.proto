@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package github.maximegorov13.grpc.proto.api.example;
+
+import "api/example/messages.proto";
+
+option go_package = "pkg/api/example";
+
+// Example - сервис пример
+service Example {
+  // CreatePost - метод создания твита
+  rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
+  // ListPosts - метод получения постов
+  rpc ListPosts(ListPostsRequest) returns (ListPostsResponse);
+}
