@@ -8,6 +8,7 @@ import (
 	"net"
 	"sync"
 
+	"buf.build/go/protovalidate"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
@@ -17,10 +18,16 @@ import (
 )
 
 func main() {
+	validator, err := protovalidate.New()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	server := grpc.NewServer()
 
 	service := &ExampleService{
-		storage: make(map[uint64]*Post, 1),
+		storage:   make(map[uint64]*Post, 1),
+		validator: validator,
 	}
 
 	example.RegisterExampleServer(server, service)
@@ -49,11 +56,15 @@ type Post struct {
 type ExampleService struct {
 	example.UnimplementedExampleServer
 
-	storage map[uint64]*Post
-	mu      sync.RWMutex
+	validator protovalidate.Validator
+	storage   map[uint64]*Post
+	mu        sync.RWMutex
 }
 
 func (s *ExampleService) CreatePost(ctx context.Context, req *example.CreatePostRequest) (*example.CreatePostResponse, error) {
+	if err := s.validator.Validate(req); err != nil {
+		return nil, err
+	}
 
 	id := rand.Uint64()
 	post := &Post{

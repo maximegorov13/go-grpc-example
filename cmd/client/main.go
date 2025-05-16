@@ -23,7 +23,7 @@ func main() {
 
 	resp, err := client.CreatePost(context.Background(), &example.CreatePostRequest{
 		Title:    "example",
-		AuthorId: "1",
+		AuthorId: "",
 		Content:  "Test",
 	})
 	if err != nil {
