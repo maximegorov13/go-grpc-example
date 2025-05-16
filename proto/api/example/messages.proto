@@ -1,23 +1,23 @@
 syntax = "proto3";
 
-package github.maximegorov13.grpc.proto.api.example;
+package api.example;
 
 option go_package = "pkg/api/example";
 
 // CreatePostRequest - запрос CreatePost
 message CreatePostRequest {
   // title - название поста
-  string title = 1;
+  string title = 1 [json_name = "title"];
   // author_id - id автора поста
-  string author_id = 2;
+  string author_id = 2 [json_name = "author_id"];
   // content - содержание статьи
-  string content = 3;
+  string content = 3 [json_name = "content"];
 }
 
 // CreatePostResponse - ответ CreatePost
 message CreatePostResponse {
   // post_id - id созданного поста
-  uint64 post_id = 1;
+  uint64 post_id = 1 [json_name = "post_id"];
 }
 
 message ListPostsRequest {}

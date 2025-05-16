@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Example_CreatePost_FullMethodName = "/github.maximegorov13.grpc.proto.api.example.Example/CreatePost"
-	Example_ListPosts_FullMethodName  = "/github.maximegorov13.grpc.proto.api.example.Example/ListPosts"
+	Example_CreatePost_FullMethodName = "/api.example.Example/CreatePost"
+	Example_ListPosts_FullMethodName  = "/api.example.Example/ListPosts"
 )
 
 // ExampleClient is the client API for Example service.
@@ -150,7 +150,7 @@ func _Example_ListPosts_Handler(srv interface{}, ctx context.Context, dec func(i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Example_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "github.maximegorov13.grpc.proto.api.example.Example",
+	ServiceName: "api.example.Example",
 	HandlerType: (*ExampleServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

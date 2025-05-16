@@ -24,24 +24,24 @@ var File_api_example_example_service_proto protoreflect.FileDescriptor
 
 const file_api_example_example_service_proto_rawDesc = "" +
 	"\n" +
-	"!api/example/example_service.proto\x12+github.maximegorov13.grpc.proto.api.example\x1a\x1aapi/example/messages.proto2\xa6\x02\n" +
-	"\aExample\x12\x8d\x01\n" +
+	"!api/example/example_service.proto\x12\vapi.example\x1a\x1aapi/example/messages.proto2\xa4\x01\n" +
+	"\aExample\x12M\n" +
 	"\n" +
-	"CreatePost\x12>.github.maximegorov13.grpc.proto.api.example.CreatePostRequest\x1a?.github.maximegorov13.grpc.proto.api.example.CreatePostResponse\x12\x8a\x01\n" +
-	"\tListPosts\x12=.github.maximegorov13.grpc.proto.api.example.ListPostsRequest\x1a>.github.maximegorov13.grpc.proto.api.example.ListPostsResponseB\xab\x02\n" +
-	"/com.github.maximegorov13.grpc.proto.api.exampleB\x13ExampleServiceProtoP\x01Z\x0fpkg/api/example\xa2\x02\x06GMGPAE\xaa\x02+Github.Maximegorov13.Grpc.Proto.Api.Example\xca\x02+Github\\Maximegorov13\\Grpc\\Proto\\Api\\Example\xe2\x027Github\\Maximegorov13\\Grpc\\Proto\\Api\\Example\\GPBMetadata\xea\x020Github::Maximegorov13::Grpc::Proto::Api::Exampleb\x06proto3"
+	"CreatePost\x12\x1e.api.example.CreatePostRequest\x1a\x1f.api.example.CreatePostResponse\x12J\n" +
+	"\tListPosts\x12\x1d.api.example.ListPostsRequest\x1a\x1e.api.example.ListPostsResponseB\x84\x01\n" +
+	"\x0fcom.api.exampleB\x13ExampleServiceProtoP\x01Z\x0fpkg/api/example\xa2\x02\x03AEX\xaa\x02\vApi.Example\xca\x02\vApi\\Example\xe2\x02\x17Api\\Example\\GPBMetadata\xea\x02\fApi::Exampleb\x06proto3"
 
 var file_api_example_example_service_proto_goTypes = []any{
-	(*CreatePostRequest)(nil),  // 0: github.maximegorov13.grpc.proto.api.example.CreatePostRequest
-	(*ListPostsRequest)(nil),   // 1: github.maximegorov13.grpc.proto.api.example.ListPostsRequest
-	(*CreatePostResponse)(nil), // 2: github.maximegorov13.grpc.proto.api.example.CreatePostResponse
-	(*ListPostsResponse)(nil),  // 3: github.maximegorov13.grpc.proto.api.example.ListPostsResponse
+	(*CreatePostRequest)(nil),  // 0: api.example.CreatePostRequest
+	(*ListPostsRequest)(nil),   // 1: api.example.ListPostsRequest
+	(*CreatePostResponse)(nil), // 2: api.example.CreatePostResponse
+	(*ListPostsResponse)(nil),  // 3: api.example.ListPostsResponse
 }
 var file_api_example_example_service_proto_depIdxs = []int32{
-	0, // 0: github.maximegorov13.grpc.proto.api.example.Example.CreatePost:input_type -> github.maximegorov13.grpc.proto.api.example.CreatePostRequest
-	1, // 1: github.maximegorov13.grpc.proto.api.example.Example.ListPosts:input_type -> github.maximegorov13.grpc.proto.api.example.ListPostsRequest
-	2, // 2: github.maximegorov13.grpc.proto.api.example.Example.CreatePost:output_type -> github.maximegorov13.grpc.proto.api.example.CreatePostResponse
-	3, // 3: github.maximegorov13.grpc.proto.api.example.Example.ListPosts:output_type -> github.maximegorov13.grpc.proto.api.example.ListPostsResponse
+	0, // 0: api.example.Example.CreatePost:input_type -> api.example.CreatePostRequest
+	1, // 1: api.example.Example.ListPosts:input_type -> api.example.ListPostsRequest
+	2, // 2: api.example.Example.CreatePost:output_type -> api.example.CreatePostResponse
+	3, // 3: api.example.Example.ListPosts:output_type -> api.example.ListPostsResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

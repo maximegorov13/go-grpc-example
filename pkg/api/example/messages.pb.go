@@ -27,7 +27,7 @@ type CreatePostRequest struct {
 	// title - название поста
 	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	// author_id - id автора поста
-	AuthorId string `protobuf:"bytes,2,opt,name=author_id,json=authorId,proto3" json:"author_id,omitempty"`
+	AuthorId string `protobuf:"bytes,2,opt,name=author_id,proto3" json:"author_id,omitempty"`
 	// content - содержание статьи
 	Content       string `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -89,7 +89,7 @@ func (x *CreatePostRequest) GetContent() string {
 type CreatePostResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// post_id - id созданного поста
-	PostId        uint64 `protobuf:"varint,1,opt,name=post_id,json=postId,proto3" json:"post_id,omitempty"`
+	PostId        uint64 `protobuf:"varint,1,opt,name=post_id,proto3" json:"post_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -207,16 +207,16 @@ var File_api_example_messages_proto protoreflect.FileDescriptor
 
 const file_api_example_messages_proto_rawDesc = "" +
 	"\n" +
-	"\x1aapi/example/messages.proto\x12+github.maximegorov13.grpc.proto.api.example\"`\n" +
+	"\x1aapi/example/messages.proto\x12\vapi.example\"a\n" +
 	"\x11CreatePostRequest\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1b\n" +
-	"\tauthor_id\x18\x02 \x01(\tR\bauthorId\x12\x18\n" +
-	"\acontent\x18\x03 \x01(\tR\acontent\"-\n" +
-	"\x12CreatePostResponse\x12\x17\n" +
-	"\apost_id\x18\x01 \x01(\x04R\x06postId\"\x12\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1c\n" +
+	"\tauthor_id\x18\x02 \x01(\tR\tauthor_id\x12\x18\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\".\n" +
+	"\x12CreatePostResponse\x12\x18\n" +
+	"\apost_id\x18\x01 \x01(\x04R\apost_id\"\x12\n" +
 	"\x10ListPostsRequest\"\x13\n" +
-	"\x11ListPostsResponseB\xa5\x02\n" +
-	"/com.github.maximegorov13.grpc.proto.api.exampleB\rMessagesProtoP\x01Z\x0fpkg/api/example\xa2\x02\x06GMGPAE\xaa\x02+Github.Maximegorov13.Grpc.Proto.Api.Example\xca\x02+Github\\Maximegorov13\\Grpc\\Proto\\Api\\Example\xe2\x027Github\\Maximegorov13\\Grpc\\Proto\\Api\\Example\\GPBMetadata\xea\x020Github::Maximegorov13::Grpc::Proto::Api::Exampleb\x06proto3"
+	"\x11ListPostsResponseB~\n" +
+	"\x0fcom.api.exampleB\rMessagesProtoP\x01Z\x0fpkg/api/example\xa2\x02\x03AEX\xaa\x02\vApi.Example\xca\x02\vApi\\Example\xe2\x02\x17Api\\Example\\GPBMetadata\xea\x02\fApi::Exampleb\x06proto3"
 
 var (
 	file_api_example_messages_proto_rawDescOnce sync.Once
@@ -232,10 +232,10 @@ func file_api_example_messages_proto_rawDescGZIP() []byte {
 
 var file_api_example_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_api_example_messages_proto_goTypes = []any{
-	(*CreatePostRequest)(nil),  // 0: github.maximegorov13.grpc.proto.api.example.CreatePostRequest
-	(*CreatePostResponse)(nil), // 1: github.maximegorov13.grpc.proto.api.example.CreatePostResponse
-	(*ListPostsRequest)(nil),   // 2: github.maximegorov13.grpc.proto.api.example.ListPostsRequest
-	(*ListPostsResponse)(nil),  // 3: github.maximegorov13.grpc.proto.api.example.ListPostsResponse
+	(*CreatePostRequest)(nil),  // 0: api.example.CreatePostRequest
+	(*CreatePostResponse)(nil), // 1: api.example.CreatePostResponse
+	(*ListPostsRequest)(nil),   // 2: api.example.ListPostsRequest
+	(*ListPostsResponse)(nil),  // 3: api.example.ListPostsResponse
 }
 var file_api_example_messages_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

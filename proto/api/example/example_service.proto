@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package github.maximegorov13.grpc.proto.api.example;
+package api.example;
 
 import "api/example/messages.proto";
 
