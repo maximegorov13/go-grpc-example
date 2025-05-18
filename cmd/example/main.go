@@ -9,8 +9,10 @@ import (
 	"sync"
 
 	"buf.build/go/protovalidate"
+	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/reflection"
 	"google.golang.org/grpc/status"
 
@@ -62,8 +64,23 @@ type ExampleService struct {
 }
 
 func (s *ExampleService) CreatePost(ctx context.Context, req *example.CreatePostRequest) (*example.CreatePostResponse, error) {
+	md, ok := metadata.FromIncomingContext(ctx)
+	if ok {
+		log.Println(md)
+	}
+
 	if err := s.validator.Validate(req); err != nil {
-		return nil, err
+		st := status.New(codes.InvalidArgument, codes.InvalidArgument.String())
+		st, _ = st.WithDetails(&errdetails.BadRequest{
+			FieldViolations: []*errdetails.BadRequest_FieldViolation{
+				{
+					Field:       "request",
+					Description: err.Error(),
+				},
+			},
+		})
+
+		return nil, st.Err()
 	}
 
 	id := rand.Uint64()
@@ -76,6 +93,10 @@ func (s *ExampleService) CreatePost(ctx context.Context, req *example.CreatePost
 	s.mu.Lock()
 	s.storage[id] = post
 	s.mu.Unlock()
+
+	header := metadata.Pairs("header-key", "val")
+	grpc.SetHeader(ctx, header)
+	grpc.SetTrailer(ctx, header)
 
 	return &example.CreatePostResponse{
 		PostId: id,
